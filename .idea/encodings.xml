@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/src/3DView.cpp" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/mouseKeyboard.cpp" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/triangleAnimation.cpp" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/viewport.cpp" charset="windows-1252" />
+    <file url="file://$USER_HOME$/Downloads/Janela.java" charset="windows-1252" />
+    <file url="file://$USER_HOME$/Downloads/Renderer.java" charset="windows-1252" />
+  </component>
+</project>
