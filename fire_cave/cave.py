@@ -1,6 +1,10 @@
+# coding=utf-8
+from __future__ import unicode_literals
 from OpenGL.GL import *
 from OpenGL.GLU import *
 from OpenGL.GLUT import *
+from random import uniform
+import numpy as np
 import math
 
 # Janela
@@ -27,8 +31,71 @@ visao_x = 0
 visao_y = 0
 visao_z = 0
 
-# Funções
 
+class Particulas():
+    def __init__(self, x=0, y=0, z=0,
+                 velocidade_x=None,
+                 velocidade_y=None,
+                 velocidade_z=None,
+                 tam=2
+                 ):
+        self.tam = tam
+        self.x = x
+        self.y = y
+        self.z = z
+        if (velocidade_x, velocidade_y, velocidade_z) == (None, None, None):
+            self.velocidade_x = uniform(-1.0, 1.0)
+            self.velocidade_y = uniform(1.0, 3.0)
+            self.velocidade_z = uniform(-1.0, 1.0)
+        self.alpha = 1
+
+    def mostrar(self):
+        glPushMatrix()
+        glColor4f(0.8, 0.8, 0.8, self.alpha)
+        glTranslatef(self.x, self.y, self.z)
+        # glRectf(-(self.tam/2), -(self.tam/2), (self.tam/2), (self.tam/2))
+        pontos = 40
+
+        glBegin(GL_POLYGON)
+        # h = (2*math.pi)/pontos
+        glVertex3f(0, 0, 0.0)
+
+        for x in range(361)[::int(360 / pontos)]:
+            y = x * (math.pi / 180)
+            glVertex3f(self.tam * math.cos(y), self.tam * math.sin(y), 0.0)
+
+        glEnd()
+        glPushMatrix()
+        glColor4f(0.8, 0.8, 0.8, self.alpha-0.1)
+        pontos = 40
+        glScalef(1.3, 1.3, 1)
+        glBegin(GL_POLYGON)
+        # h = (2*math.pi)/pontos
+        glVertex3f(0, 0, 0.0)
+
+        for x in range(361)[::int(360 / pontos)]:
+            y = x * (math.pi / 180)
+            glVertex3f(self.tam * math.cos(y), self.tam * math.sin(y), 0.0)
+
+        glEnd()
+        glPopMatrix()
+        glPopMatrix()
+
+    def atualizar(self):
+        self.x += self.velocidade_x
+        self.y += self.velocidade_y
+        self.z += self.velocidade_z
+        self.alpha -= 0.05
+        self.tam += 0.2
+
+    def morte(self):
+        return self.alpha <= 0
+
+
+particulas = []
+
+
+# Funções
 
 # Inicializa opengl
 def inicializar():
@@ -38,7 +105,9 @@ def inicializar():
     glEnable(GL_LIGHT0)  # habilita luz 0
     glEnable(GL_COLOR_MATERIAL)  # Utiliza cor do objeto como material
     glColorMaterial(GL_FRONT, GL_DIFFUSE)
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)
 
+    glEnable(GL_BLEND)
     glEnable(GL_LIGHTING)  # Habilita luz
     glEnable(GL_DEPTH_TEST)  # Habilita Z - buffer
     glEnable(GL_CULL_FACE)  # Habilita Backface - Culling
@@ -48,42 +117,16 @@ def idle():
     glutPostRedisplay()
 
 
-# Eixos coordenados
-def desenha_eixos():
-    glBegin(GL_LINES)
-    glColor3f(1.0, 0.0, 0.0)
-    glVertex3f(-10.0, 0.0, 0.0)
-    glVertex3f(10.0, 0.0, 0.0)
-    glColor3f(0.0,   1.0, 0.0)
-    glVertex3f(0.0, -10.0, 0.0)
-    glVertex3f(0.0,  10.0, 0.0)
-    glEnd()
-
-
 def desenha_objetos():
-    global camera_x
-    global camera_y
-    global camera_z
-    global visao_x
-    global visao_y
-    global visao_z
-    # glColor3f(0.0, 0.0, 1.0)
-    #
-    # glutWireTeapot(35)
-    # glTranslatef(0, -28, 0)
-    glPushMatrix()
-    glRotatef(rot_y, 0.0, 1.0, 0.0)
-    glRotatef(rot_x, 1.0, 0.0, 0.0)
+    global particulas
 
-    glColor3f(0.80, 0.80, 0.80)
-    # glutSolidTorus(5.0, 10.0, 40, 40)
-    glutWireTeapot(5.0)
-    glPopMatrix()
-    glBegin(GL_LINES)
-    glColor3f(1.0, 0.0, 0.0)
-    glVertex3f(camera_x, camera_y, camera_z)
-    glVertex3f(visao_x, visao_y, visao_z)
-    glEnd()
+    pa = Particulas(0, -10, 0)
+    particulas.append(pa)
+    for part in particulas:
+        part.atualizar()
+        part.mostrar()
+        if part.morte():
+            particulas.remove(part)
 
 
 #############################
@@ -239,6 +282,7 @@ def motion(x, y):
 
     rot_x += (y - y_velho)
     rot_y += (x - x_velho)
+    print(x, y)
 
     x_velho = x
     y_velho = y

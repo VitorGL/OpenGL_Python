@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6ad82878-2396-44b8-aff7-4a8ba257e78a" name="Default Changelist" comment="" />
+    <list default="true" id="6ad82878-2396-44b8-aff7-4a8ba257e78a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fire_cave/cave.py" beforeDir="false" afterPath="$PROJECT_DIR$/fire_cave/cave.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,9 +19,16 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1SD3R2CLzaXjMhYKQPLg2KyZ5AH" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -40,6 +51,28 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.cave">
+    <configuration name="Metodos" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="OpenGL_Python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../Metodos-de-ALC" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../Metodos-de-ALC/Metodos.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="cave" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="OpenGL_Python" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -62,7 +95,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="exercicio4" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="desafio_fs (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="OpenGL_Python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -70,12 +103,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/exercícios" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../desafio_fs" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/exercícios/exercicio4.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../desafio_fs/desafio_fs.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -84,7 +117,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="exercicio5" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="exercicio2" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="OpenGL_Python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -97,7 +130,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/exercícios/exercicio5.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/exercícios/exercicio2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -106,7 +139,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="exercicio6" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="text_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="OpenGL_Python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -114,34 +147,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/exercícios" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/fire_cave" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/exercícios/exercicio6.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="viewport" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="OpenGL_Python" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/exercícios" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/exercícios/viewport.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/fire_cave/text_test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -153,10 +164,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.cave" />
-        <item itemvalue="Python.viewport" />
-        <item itemvalue="Python.exercicio6" />
-        <item itemvalue="Python.exercicio5" />
-        <item itemvalue="Python.exercicio4" />
+        <item itemvalue="Python.text_test" />
+        <item itemvalue="Python.exercicio2" />
+        <item itemvalue="Python.Metodos" />
+        <item itemvalue="Python.desafio_fs (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -181,23 +192,51 @@
       <workItem from="1572884417167" duration="929000" />
       <workItem from="1572886277971" duration="1201000" />
       <workItem from="1573310886604" duration="13324000" />
+      <workItem from="1573587849372" duration="8963000" />
+      <workItem from="1573649078763" duration="21670000" />
+      <workItem from="1574023076866" duration="7740000" />
+      <workItem from="1574095228478" duration="22217000" />
+      <workItem from="1574192525179" duration="3144000" />
+      <workItem from="1574196028423" duration="12485000" />
+      <workItem from="1574258072661" duration="12525000" />
+      <workItem from="1574353756503" duration="5490000" />
+      <workItem from="1574631021441" duration="26009000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/OpenGL_Python$exercicio4.coverage" NAME="exercicio4 Coverage Results" MODIFIED="1571693859960" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/exercícios" />
+    <SUITE FILE_PATH="coverage/OpenGL_Python$teste_geracao_de_log.coverage" NAME="teste_geracao_de_log Coverage Results" MODIFIED="1574213403508" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Python_app" />
     <SUITE FILE_PATH="coverage/OpenGL_Python$exercicio6.coverage" NAME="exercicio6 Coverage Results" MODIFIED="1571702871888" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/exercícios" />
-    <SUITE FILE_PATH="coverage/OpenGL_Python$exercicio2.coverage" NAME="exercicio2 Coverage Results" MODIFIED="1571605827914" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/exercícios" />
-    <SUITE FILE_PATH="coverage/OpenGL_Python$cave.coverage" NAME="cave Coverage Results" MODIFIED="1573333939333" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/fire_cave" />
-    <SUITE FILE_PATH="coverage/OpenGL_Python$exercicio5.coverage" NAME="exercicio5 Coverage Results" MODIFIED="1571694714140" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/exercícios" />
-    <SUITE FILE_PATH="coverage/OpenGL_Python$metodos.coverage" NAME="metodos Coverage Results" MODIFIED="1571185269863" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../Faculdade/METODOS/MetodosZam/Metodos" />
+    <SUITE FILE_PATH="coverage/OpenGL_Python$exercicio2.coverage" NAME="exercicio2 Coverage Results" MODIFIED="1574659285259" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/exercícios" />
+    <SUITE FILE_PATH="coverage/OpenGL_Python$metodos.coverage" NAME="metodos Coverage Results" MODIFIED="1573679748468" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../Faculdade/METODOS/MetodosZam/Metodos" />
+    <SUITE FILE_PATH="coverage/OpenGL_Python$teste_uso_de_memoria.coverage" NAME="teste_uso_de_memoria Coverage Results" MODIFIED="1574212182437" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Python_app" />
     <SUITE FILE_PATH="coverage/OpenGL_Python$mdf_.coverage" NAME="mdf  Coverage Results" MODIFIED="1571185175638" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../MDF-Calor/paralelo" />
-    <SUITE FILE_PATH="coverage/OpenGL_Python$mouse_teclado.coverage" NAME="mouse_teclado Coverage Results" MODIFIED="1571092919155" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/exercícios" />
     <SUITE FILE_PATH="coverage/OpenGL_Python$exercicio3.coverage" NAME="exercicio3 Coverage Results" MODIFIED="1571688057836" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/exercícios" />
+    <SUITE FILE_PATH="coverage/OpenGL_Python$Metodos.coverage" NAME="Metodos Coverage Results" MODIFIED="1574270860640" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Metodos-de-ALC" />
+    <SUITE FILE_PATH="coverage/OpenGL_Python$exercicio4.coverage" NAME="exercicio4 Coverage Results" MODIFIED="1571693859960" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/exercícios" />
+    <SUITE FILE_PATH="coverage/OpenGL_Python$text_test.coverage" NAME="text_test Coverage Results" MODIFIED="1574659658702" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/fire_cave" />
+    <SUITE FILE_PATH="coverage/OpenGL_Python$cave.coverage" NAME="cave Coverage Results" MODIFIED="1574662119481" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/fire_cave" />
+    <SUITE FILE_PATH="coverage/OpenGL_Python$exercicio5.coverage" NAME="exercicio5 Coverage Results" MODIFIED="1571694714140" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/exercícios" />
+    <SUITE FILE_PATH="coverage/OpenGL_Python$desafio_fs.coverage" NAME="desafio_fs Coverage Results" MODIFIED="1573596240179" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Desafio" />
+    <SUITE FILE_PATH="coverage/OpenGL_Python$mouse_teclado.coverage" NAME="mouse_teclado Coverage Results" MODIFIED="1571092919155" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/exercícios" />
     <SUITE FILE_PATH="coverage/OpenGL_Python$viewport.coverage" NAME="viewport Coverage Results" MODIFIED="1573330936470" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/exercícios" />
+    <SUITE FILE_PATH="coverage/OpenGL_Python$desafio_fs__1_.coverage" NAME="desafio_fs (1) Coverage Results" MODIFIED="1574269865601" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../desafio_fs" />
     <SUITE FILE_PATH="coverage/OpenGL_Python$exercicio1.coverage" NAME="exercicio1 Coverage Results" MODIFIED="1571095809241" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/exercícios" />
   </component>
 </project>
