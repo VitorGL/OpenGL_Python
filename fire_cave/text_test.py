@@ -405,54 +405,95 @@ vertices = [(-(tam/2), -(tam / 2), 0),
             ]
 
 
-def inicializar():
-    global texid
-    glClearColor(0.0, 0.0, 0.0, 0.0)
-    glShadeModel(GL_SMOOTH)
-
-    glEnable(GL_LIGHT0)  # habilita luz 0
-    glEnable(GL_COLOR_MATERIAL)  # Utiliza cor do objeto como material
-    glColorMaterial(GL_FRONT, GL_DIFFUSE)
-    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)
-
-    glEnable(GL_BLEND)
-    glEnable(GL_LIGHTING)  # Habilita luz
-    glEnable(GL_DEPTH_TEST)  # Habilita Z - buffer
-    glEnable(GL_CULL_FACE)  # Habilita Backface - Culling
-
-    # #        positions                 colors        texture coords
-    # quad = [-(tam/2), -(tam / 2), 0,  1.0, 0.0, 0.0,  0.0, 0.0,
-    #         (tam / 2), -(tam / 2), 0,  0.0, 1.0, 0.0,  1.0, 0.0,
-    #         (tam / 2), (tam / 2), 0,  0.0, 0.0, 1.0,  1.0, 1.0,
-    #         -(tam / 2), (tam / 2), 0,  1.0, 1.0, 1.0,  0.0, 1.0]
-    #
-    # quad = numpy.array(quad, dtype=numpy.float32)
-    #
-    # indices = [0, 1, 2,
-    #            2, 3, 0]
-
+def carregar_textura():
     image = Image.open("vermelho.png")
-    # img_data = numpy.array(list(image.getdata()), numpy.uint8)
     flipped_image = image.transpose(Image.FLIP_TOP_BOTTOM)
     img_data = flipped_image.convert("RGBA").tobytes()
+
     glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, image.width, image.height, 0, GL_RGBA, GL_UNSIGNED_BYTE, img_data)
-    # print(image.width, image.height)
-    # textureSurface = pygame.image.load('test_image.png')
-    # textureData = pygame.image.tostring(textureSurface, "RGBA", 1)
-    width = image.width
-    height = image.height
 
     glEnable(GL_TEXTURE_2D)
     texid = glGenTextures(1)
 
     glBindTexture(GL_TEXTURE_2D, texid)
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height,
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, image.width, image.height,
                  0, GL_RGBA, GL_UNSIGNED_BYTE, img_data)
 
     glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT)
     glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT)
     glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST)
     glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST)
+
+    return texid
+
+
+def draw_cube(lines=False):
+
+    glBegin(GL_QUADS)
+    glTexCoord2f(0.0, 0.0)
+    glVertex3f(-1.0, -1.0,  0)
+    glTexCoord2f(1.0, 0.0)
+    glVertex3f(1.0, -1.0,  0)
+    glTexCoord2f(1.0, 1.0)
+    glVertex3f(1.0,  1.0,  0)
+    glTexCoord2f(0.0, 1.0)
+    glColor4f(0, 0, 0, 1)
+    glVertex3f(-1.0,  1.0,  0)
+    glEnd()
+
+
+def inicializar():
+    global texid
+    glClearColor(0.0, 0.0, 0.0, 0.0)
+    carregar_textura()
+
+    gluPerspective(45, 800 / 600, 0.1, 50.0)
+    glTranslatef(0.0, 0.0, -5)
+    glShadeModel(GL_SMOOTH)
+    #
+    # glEnable(GL_LIGHT0)  # habilita luz 0
+    glEnable(GL_COLOR_MATERIAL)  # Utiliza cor do objeto como material
+    glColorMaterial(GL_FRONT, GL_DIFFUSE)
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)
+    #
+    glEnable(GL_BLEND)
+    # glEnable(GL_LIGHTING)  # Habilita luz
+    glEnable(GL_DEPTH_TEST)  # Habilita Z - buffer
+    glEnable(GL_CULL_FACE)  # Habilita Backface - Culling
+
+    # # #        positions                 colors        texture coords
+    # # quad = [-(tam/2), -(tam / 2), 0,  1.0, 0.0, 0.0,  0.0, 0.0,
+    # #         (tam / 2), -(tam / 2), 0,  0.0, 1.0, 0.0,  1.0, 0.0,
+    # #         (tam / 2), (tam / 2), 0,  0.0, 0.0, 1.0,  1.0, 1.0,
+    # #         -(tam / 2), (tam / 2), 0,  1.0, 1.0, 1.0,  0.0, 1.0]
+    # #
+    # # quad = numpy.array(quad, dtype=numpy.float32)
+    # #
+    # # indices = [0, 1, 2,
+    # #            2, 3, 0]
+    #
+    # image = Image.open("vermelho.png")
+    # # img_data = numpy.array(list(image.getdata()), numpy.uint8)
+    # flipped_image = image.transpose(Image.FLIP_TOP_BOTTOM)
+    # img_data = flipped_image.convert("RGBA").tobytes()
+    # glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, image.width, image.height, 0, GL_RGBA, GL_UNSIGNED_BYTE, img_data)
+    # # print(image.width, image.height)
+    # # textureSurface = pygame.image.load('test_image.png')
+    # # textureData = pygame.image.tostring(textureSurface, "RGBA", 1)
+    # width = image.width
+    # height = image.height
+    #
+    # glEnable(GL_TEXTURE_2D)
+    # texid = glGenTextures(1)
+    #
+    # glBindTexture(GL_TEXTURE_2D, texid)
+    # glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height,
+    #              0, GL_RGBA, GL_UNSIGNED_BYTE, img_data)
+    #
+    # glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT)
+    # glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT)
+    # glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST)
+    # glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST)
 
 
 def definir_visualizacao():
@@ -475,42 +516,44 @@ def exibir():
 
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
 
-    definir_visualizacao()
+    draw_cube(lines=False)
+
+    # definir_visualizacao()
 
     # glBegin(GL_QUADS)
     # for v in vertices:
     #     glVertex3f(v[0], v[1], v[2])
     # glEnd()
 
-    pontos = 40
-
-    glColor3f(1.0, 0.0, 0.0)
-    glBegin(GL_POLYGON)
-    # h = (2*math.pi)/pontos
-    glVertex3f(0, 0, 0.0)
-
-    for x in range(361)[::int(360 / pontos)]:
-        y = x * (math.pi / 180)
-        glVertex3f(1*math.cos(y), 1*math.sin(y), 0.0)
-
-    glEnd()
-
-    glDisable(GL_TEXTURE_2D)
+    # pontos = 40
+    #
+    # glColor3f(1.0, 0.0, 0.0)
+    # glBegin(GL_POLYGON)
+    # # h = (2*math.pi)/pontos
+    # glVertex3f(0, 0, 0.0)
+    #
+    # for x in range(361)[::int(360 / pontos)]:
+    #     y = x * (math.pi / 180)
+    #     glVertex3f(1*math.cos(y), 1*math.sin(y), 0.0)
+    #
+    # glEnd()
+    #
+    # glDisable(GL_TEXTURE_2D)
     glutSwapBuffers()
 
 
 def main():
     global fAspect
 
-    largura = 1080
-    altura = 720
+    largura = 800
+    altura = 600
     fAspect = largura / altura
     glutInit()
-    glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH)
+    glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA | GLUT_DEPTH)
     glutInitWindowSize(int(largura), int(altura))
     glutInitWindowPosition(20, 20)
     glutCreateWindow("Caverna")
-    # inicializar()
+    inicializar()
     glutDisplayFunc(exibir)
     # glutReshapeFunc(reformatar)
     # glutMouseFunc(mouse)

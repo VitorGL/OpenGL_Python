@@ -4,6 +4,7 @@ from OpenGL.GL import *
 from OpenGL.GLU import *
 from OpenGL.GLUT import *
 from random import uniform
+from PIL import Image
 import numpy as np
 import math
 
@@ -32,6 +33,48 @@ visao_y = 0
 visao_z = 0
 
 
+def desenha_circulo(tam, alpha):
+    pontos = 40
+
+    glBegin(GL_POLYGON)
+    # h = (2*math.pi)/pontos
+    glVertex3f(0, 0, 0.0)
+
+    for x in range(361)[::int(360 / pontos)]:
+        y = x * (math.pi / 180)
+        glVertex3f(tam * math.cos(y), tam * math.sin(y), 0.0)
+
+    glEnd()
+    glPushMatrix()
+    glColor4f(0.8, 0.8, 0.8, alpha - 0.1)
+    pontos = 40
+    glScalef(1.3, 1.3, 1)
+    glBegin(GL_POLYGON)
+    # h = (2*math.pi)/pontos
+    glVertex3f(0, 0, 0.0)
+
+    for x in range(361)[::int(360 / pontos)]:
+        y = x * (math.pi / 180)
+        glVertex3f(tam * math.cos(y), tam * math.sin(y), 0.0)
+
+    glEnd()
+    glPopMatrix()
+
+
+def desenha_quadrado(tam):
+    glBegin(GL_QUADS)
+    # glColor4f(0, 0, 0, 1)
+    glTexCoord2f(0.0, 0.0)
+    glVertex3f(-(tam/2), -(tam/2), 0)
+    glTexCoord2f(1.0, 0.0)
+    glVertex3f((tam/2), -(tam/2), 0)
+    glTexCoord2f(1.0, 1.0)
+    glVertex3f((tam/2), (tam/2), 0)
+    glTexCoord2f(0.0, 1.0)
+    glVertex3f(-(tam/2), (tam/2), 0)
+    glEnd()
+
+
 class Particulas():
     def __init__(self, x=0, y=0, z=0,
                  velocidade_x=None,
@@ -54,31 +97,7 @@ class Particulas():
         glColor4f(0.8, 0.8, 0.8, self.alpha)
         glTranslatef(self.x, self.y, self.z)
         # glRectf(-(self.tam/2), -(self.tam/2), (self.tam/2), (self.tam/2))
-        pontos = 40
-
-        glBegin(GL_POLYGON)
-        # h = (2*math.pi)/pontos
-        glVertex3f(0, 0, 0.0)
-
-        for x in range(361)[::int(360 / pontos)]:
-            y = x * (math.pi / 180)
-            glVertex3f(self.tam * math.cos(y), self.tam * math.sin(y), 0.0)
-
-        glEnd()
-        glPushMatrix()
-        glColor4f(0.8, 0.8, 0.8, self.alpha-0.1)
-        pontos = 40
-        glScalef(1.3, 1.3, 1)
-        glBegin(GL_POLYGON)
-        # h = (2*math.pi)/pontos
-        glVertex3f(0, 0, 0.0)
-
-        for x in range(361)[::int(360 / pontos)]:
-            y = x * (math.pi / 180)
-            glVertex3f(self.tam * math.cos(y), self.tam * math.sin(y), 0.0)
-
-        glEnd()
-        glPopMatrix()
+        desenha_quadrado(self.tam)
         glPopMatrix()
 
     def atualizar(self):
@@ -97,18 +116,42 @@ particulas = []
 
 # Funções
 
+def carregar_textura():
+    image = Image.open("vermelho.png")
+    flipped_image = image.transpose(Image.FLIP_TOP_BOTTOM)
+    img_data = flipped_image.convert("RGBA").tobytes()
+
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, image.width, image.height, 0, GL_RGBA, GL_UNSIGNED_BYTE, img_data)
+
+    glEnable(GL_TEXTURE_2D)
+    texid = glGenTextures(1)
+
+    glBindTexture(GL_TEXTURE_2D, texid)
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, image.width, image.height,
+                 0, GL_RGBA, GL_UNSIGNED_BYTE, img_data)
+
+    glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT)
+    glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT)
+    glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST)
+    glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST)
+
+    return texid
+
+
 # Inicializa opengl
 def inicializar():
     glClearColor(0.0, 0.0, 0.0, 0.0)
+    carregar_textura()
+
     glShadeModel(GL_SMOOTH)
 
-    glEnable(GL_LIGHT0)  # habilita luz 0
+    # glEnable(GL_LIGHT0)  # habilita luz 0
     glEnable(GL_COLOR_MATERIAL)  # Utiliza cor do objeto como material
     glColorMaterial(GL_FRONT, GL_DIFFUSE)
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)
 
     glEnable(GL_BLEND)
-    glEnable(GL_LIGHTING)  # Habilita luz
+    # glEnable(GL_LIGHTING)  # Habilita luz
     glEnable(GL_DEPTH_TEST)  # Habilita Z - buffer
     glEnable(GL_CULL_FACE)  # Habilita Backface - Culling
 
